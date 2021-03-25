@@ -10,17 +10,31 @@ function arrayRotation (array) {
     return arrayResult;
 }
 
-function multipleRotation(count, array) {
+function rotLeft(count, array) {
 
     let arrayResult = array;
 
     for (let i = 0; i < count; i++) {        
         arrayResult = arrayRotation(arrayResult)
-        // console.log("Log:" + arrayRotation(arrayResult))
+        // console.log("Log:" + arrayResult)
     }
 
-    return arrayResult;
+    return printArray(arrayResult);
+}
+
+function printArray(array){
+    
+    let result = "";
+    
+    for (let i = 0; i < array.length; i++) {
+        result = result == "" ? array[i] : result + " " + array[i]
+    }
+    
+    return result;
 }
 
 let array = [1, 2, 3, 4, 5];
-console.log(multipleRotation(5, array));
+
+let result = rotLeft(4, array);
+
+console.log(result)
