@@ -2,7 +2,6 @@
 //Create a function that reverses a string
 
 function reverseString(str) {
-
     //check input
     if (!str || str.length < 2 || typeof str !== 'string') {
         return 'Invalid string to reverse.'
