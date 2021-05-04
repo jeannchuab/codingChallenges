@@ -1,7 +1,11 @@
 //Javascript Tests
 
-let array = [1.50, 2, 2.5, 1.80, 1.00]; 
-exibeNomes();
+// let array = [1.50, 2, 2.5, 1.80, 1.00]; 
+// exibeNomes();
+
+let nums = [{x: 1, y:1}, {x: 2, y:2}, {x: 1, y:2}, {x: 5, y:5}, {x: 1, y:2}];
+let result = getCount(nums)
+console.log(result);
 
 function exibeNomes() {
 
@@ -13,7 +17,6 @@ function exibeNomes() {
             console.log('Posição:' + i + " - " + listaNomes[i]);            
         }        
     }
-
 }
 
 function calculaMaiorMenorOp1(array) {
@@ -60,4 +63,14 @@ function calculaMaiorMenorOp3(array) {
     console.log("Menor: " + menor + "Maior: " + maior);
 
     console.log("Menor: " + arrayOrd[0] + "Maior: " + arrayOrd[arrayOrd.length - 1]);
+}
+
+function getCount(objects) {    
+    let count = 0;    
+    for (let p in objects) {        
+        if (objects[p].x == objects[p].y) {
+            count++;
+        }        
+    }
+    return count;    
 }
