@@ -11,7 +11,7 @@
 //return true
 
 //Example 3: Erros check
-const array1 = ['z']
+const array1 = ['z','a', 'c']
 const array2 = ['x'];
 //return false
 
@@ -42,7 +42,7 @@ function containsCommonItem2(arr1, arr2) {
             map[item] = true;
         }
     }
-    console.log(map);
+    console.log(map);    
     
     //2. loop through second array and check if them in second array exists on created object
     for (let j = 0; j < arr2.length; j++) {
@@ -59,5 +59,5 @@ function containsCommonItem3(arr1, arr2) {
     return arr1.some(item => arr2.includes(item))
 }
 
-let result = containsCommonItem3(array1, array2);
+let result = containsCommonItem2(array1, array2);
 console.log("Result = " + result);

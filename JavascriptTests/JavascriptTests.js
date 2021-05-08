@@ -4,7 +4,8 @@
 // exibeNomes();
 
 let nums = [{x: 1, y:1}, {x: 2, y:2}, {x: 1, y:2}, {x: 5, y:5}, {x: 1, y:2}];
-let result = getCount(nums)
+let result = -Infinity;
+result = getCount(nums)
 console.log(result);
 
 function exibeNomes() {
@@ -45,23 +46,16 @@ function calculaMaiorMenorOp3(array) {
     let menor = 0;
     let maior = 0;
 
-    for (let i = 0; i < 3; i++){    
-        
-        for (let j = 0; j < 3; j++){
-
-            
+    for (let i = 0; i < 3; i++){            
+        for (let j = 0; j < 3; j++){        
             if (array[i] > array[j]){
                 maior = array[i];
             } else if (array[i] < array[j]){
                 menor = array[i];
-            }
-            
-
+            }            
         }
-
     }
     console.log("Menor: " + menor + "Maior: " + maior);
-
     console.log("Menor: " + arrayOrd[0] + "Maior: " + arrayOrd[arrayOrd.length - 1]);
 }
 
