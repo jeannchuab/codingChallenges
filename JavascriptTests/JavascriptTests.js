@@ -5,8 +5,8 @@
 
 let nums = [{x: 1, y:1}, {x: 2, y:2}, {x: 1, y:2}, {x: 5, y:5}, {x: 1, y:2}];
 let result = -Infinity;
-result = getCount(nums)
-console.log(result);
+// result = getCount(nums)
+// console.log(result);
 
 function exibeNomes() {
 
@@ -68,3 +68,26 @@ function getCount(objects) {
     }
     return count;    
 }
+
+var unirest = require("unirest");
+
+var req = unirest("GET", "https://movies-tvshows-data-imdb.p.rapidapi.com/");
+
+req.query({
+	"type": "get-popular-movies",
+	"page": "1",
+	"year": "2020"
+});
+
+req.headers({
+	"x-rapidapi-key": "a7ef69c197msh37d626118a2f6d2p18e1abjsn75de94822e7c",
+	"x-rapidapi-host": "movies-tvshows-data-imdb.p.rapidapi.com",
+	"useQueryString": true
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
